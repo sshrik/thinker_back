@@ -1,0 +1,31 @@
+{
+  "name": "thinker_back",
+  "version": "1.0.0",
+  "description": "thinker backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon --watch '*ts' --exec ts-node ./index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshrik/thinker_back.git"
+  },
+  "author": "chj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshrik/thinker_back/issues"
+  },
+  "homepage": "https://github.com/sshrik/thinker_back#readme",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.9.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "ts-node": "^10.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
+  }
+}
