@@ -1,14 +1,13 @@
 import {config} from 'dotenv';
-import express, {Request, Response} from 'express';
-const app = express();
+import express from 'express';
+import fileRouter from '@router/file';
 
-app.get('/', function (req: Request, res: Response) {
-  res.send('BASE URL');
-});
+const app = express();
 
 config();
 
 const PORT = process.env.PORT;
+app.use(fileRouter);
 
 let server = app.listen(PORT, () => {
   console.log('Server is working : PORT - ', PORT);

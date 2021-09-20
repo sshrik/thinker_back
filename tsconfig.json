@@ -8,10 +8,15 @@
     "strict": true,
     "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types", "./type"],
+    "baseUrl": ".",
     "paths" : {
-      "@lib/*": ["./lib/*"],
-      "@type/*" : ["./type/*"]
+      "@constant/*" : ["constant/*"],
+      "@controller/*": ["controller/*"],
+      "@lib/*": ["lib/*"],
+      "@middleware/*": ["middleware/*"],
+      "@router/*": ["router/*"],
+      "@type/*" : ["type/*"],
     },
   },
-  "include" : ["custom.d.ts"]
+  "include" : ["custom.d.ts", "index.ts", "controller", "constant", "lib", "middleware", "router", "type"]
 }
