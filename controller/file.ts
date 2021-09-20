@@ -1,10 +1,11 @@
 import fs from 'fs';
 import { Request, Response } from 'express';
-import { ReadDirReq, ReadDirRes } from '@type/fileTypes';
+import { ReadDirReq, ReadDirRes } from '../type/fileTypes';
 
 export function readDir(req: Request, res: Response) {
-    const {prefixUrl} = req.body;
-    const fileLists = fs.readdirSync(process.env.BASE_URL + "/" + prefixUrl);
+    const {prefixUrl} : ReadDirReq= req.body;
+    const readDirLocation: string = prefixUrl ? process.env.BASE_URL + prefixUrl : process.env.BASE_URL + "";
+    const fileLists = fs.readdirSync(readDirLocation);
 
     const result : ReadDirRes = { fileLists };
 
