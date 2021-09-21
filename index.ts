@@ -14,7 +14,8 @@ app.use(
     extended: true,
   })
 );
-app.use(fileRouter);
+
+app.use('/fs', fileRouter);
 
 let server = app.listen(PORT, () => {
   console.log('Server is working : PORT - ', PORT);

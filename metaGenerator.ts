@@ -1,5 +1,6 @@
 import {config} from 'dotenv';
 import type {DirForm, FileForm} from './type/fileTypes';
+import { setFileType } from './util/fileUtils';
 import fs from 'fs';
 
 config();
@@ -24,7 +25,6 @@ function generateDirList(dir: string) : DirForm {
             const fileExtension = splitFileNames[splitFileNames.length - 1];
             const {size} = fileStat;
             result.files.push({
-                fullName: fullPath,
                 fileName,
                 fileSize: size,
                 fileType: setFileType(fileExtension),
@@ -33,26 +33,6 @@ function generateDirList(dir: string) : DirForm {
         }
     });
     return result;
-}
-
-function setFileType(fileExtension: string) : string {
-    switch(fileExtension) {
-        case "jpg":
-        case "png":
-        case "jpeg":
-            return "image";
-        case "gif":
-            return "gif";
-        case "mp4":
-        case "avi":
-            return "movie";
-        case "mp4":
-            return "music";
-        case "txt":
-            return "text";
-        default:
-            return "unknown";
-    }
 }
 
 try {
@@ -70,5 +50,3 @@ try {
 catch {
     console.error(process.env.BASE_URL, "은 올바른 위치가 아닙니다.")
 }
-
-

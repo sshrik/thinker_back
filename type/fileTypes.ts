@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 
 export interface ReadDirReq extends Request {
-    prefixUrl: string;
+    postUrl: string;
 }
 
 export interface ReadDirRes {
@@ -15,7 +15,6 @@ export type DirForm = {
 }
 
 export type FileForm = {
-    fullName: string;
     fileName: string;
     fileSize: number;
     fileType: string;
